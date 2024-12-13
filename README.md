@@ -69,3 +69,5 @@ classDiagram
 ```
 
 **OBS:** eu **ão** me preocuparei com algumas propriedades que na prática seriam importantes em um sistema real. Por exemplo um aluno (renomeei "usuario" para "aluno") não terá endereço, CEP, CPF etc. Eu me preocuparei com a relação entre os objetos, ok?
+
+A idéia geral é: usarei ao menos em parte a nomenclatura que a DIO usa. Eu estou em uma formação de Kotlin, que tem vários cursos, desafios, lives etc. Trocarei o nome da classe "Usuario" para "Aluno". Então um aluno se matriculará em uma formação (ex: Kotlin) e esta terá vários conteúdos educacionais. Cursos, desafios, lives? Não, simplificarei. O conteúdo educacional terá uma propriedade "conteudo" (e seus getter e setter) simplesmente. Como você pode ver na plataforma, o que estou chamando de "ConteudoEducacional" terá um nível. O aluno matriculará-se em uma formação, um conjunto de conteúdos educacionais. Simples assim... Vendo o diagrama acima talvez fique mais clario.

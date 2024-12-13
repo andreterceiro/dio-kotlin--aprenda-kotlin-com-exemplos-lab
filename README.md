@@ -21,13 +21,14 @@ classDiagram
     class ConteudoEducacional {
         - Integer codigo
         - String nome
-        - List<Formacao> formacoes
+        - String conteudo
         + Integer getCodigo()
         + Double getNome()
         + String getFormacoes()
+        + String getConteudo()
         + void setCodigo(Integer code)
         + void setNome(String nome)
-        + void setFormacao(Formacao formacao)
+        + void setConteudo(String conteudo)
     }
 
     class Formacao {
@@ -37,9 +38,11 @@ classDiagram
         + Integer getCodigo()
         + Double getNome()
         + Nivel getNivel()
+        + ConteudoEducacional getConteudoEducacional()
         + void setCodigo(Integer code)
         + void setNome(String nome)
         + void setNivel(Nivel nivel)
+        + void setConteudoEducacional(ConteudoEducacional conteudoEducacional)
     }
 
     class Aluno {
@@ -62,7 +65,7 @@ classDiagram
 
     ConteudoEducacional "1" *-- "N" Formacao
     Formacao "N" -- "N" Aluno
-    Formacao "1" -- "1" Nivel
+    ConteudoEducacional "1" -- "1" Nivel
 ```
 
 **OBS:** eu **ão** me preocuparei com algumas propriedades que na prática seriam importantes em um sistema real. Por exemplo um aluno (renomeei "usuario" para "aluno") não terá endereço, CEP, CPF etc. Eu me preocuparei com a relação entre os objetos, ok?

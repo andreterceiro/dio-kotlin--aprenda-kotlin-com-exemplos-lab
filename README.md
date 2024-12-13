@@ -8,3 +8,59 @@ Desafio de Projeto criado para avaliação do conteúdo técnico explorado no re
 ```kotlin
 TODO("Crie uma solução em Koltin abstraindo esse domínio. O arquivo [desafio.kt] te ajudará 😉")
 ```
+
+# Resolução
+
+Farei inicialmente alguns diagramas com o Mermaid:
+
+```mermaid
+---
+title: Classes do sistema
+---
+classDiagram
+    class ConteudoEducacional {
+        - Integer codigo
+        - String nome
+        - List<Formacao> formacoes
+        + Integer getCodigo()
+        + Double getNome()
+        + String getFormacoes()
+        + void setCodigo(Integer code)
+        + void setNome(String nome)
+        + void setFormacao(Formacao formacao)
+    }
+
+    class Formacao {
+        - Integer codigo
+        - String nome
+        - Nivel nivel
+        + Integer getCodigo()
+        + Double getNome()
+        + Nivel getNivel()
+        + void setCodigo(Integer code)
+        + void setNome(String nome)
+        + void setNivel(Nivel nivel)
+    }
+
+    class Aluno {
+        - Integer codigo
+        - String name
+        - List<Formacao> formacoes
+        + Integer getCodigo()
+        + Double getNome()
+        + void setCodigo(Integer code)
+        + void setNome(String nome)
+        + void matricular(Formacao formacao)
+    }
+ 
+    class Nivel{
+        <<enumeration>>
+        BASICO
+        INTERMEDIARIO
+        AVANCADO
+    }
+
+    ConteudoEducacional "1" *-- "N" Formacao
+    Formacao "N" -- "N" Aluno
+    Formacao "1" -- "1" Nivel
+```

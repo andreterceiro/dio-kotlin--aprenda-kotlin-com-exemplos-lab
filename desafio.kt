@@ -1,6 +1,11 @@
-enum class Nivel { BASICO, INTERMEDIARIO, DIFICIL }
+enum class Nivel { BASICO, INTERMEDIARIO, AVANCADO }
 
-data class ConteudoEducacional(val nome: String, val duracaoHoras: Int, val nivel: Nivel)
+data class ConteudoEducacional(
+    val nome: String, 
+    val conteudo: String,
+    val duracaoHoras: Int,
+    val nivel: Nivel
+)
 
 data class Aluno(val codigo: Int, var nome: String)
 
@@ -14,9 +19,9 @@ data class Formacao(val nome: String, val conteudos: List<ConteudoEducacional>) 
 
 fun main() {
     val conteudosEducacionais1 = ArrayList<ConteudoEducacional>()
-    conteudosEducacionais1.add(ConteudoEducacional("Introdução a Kotlin", 3, Nivel.BASICO))
-    conteudosEducacionais1.add(ConteudoEducacional("A interface List", 2, Nivel.INTERMEDIARIO))
-    conteudosEducacionais1.add(ConteudoEducacional("Falando sobre ArrayList", 2, Nivel.INTERMEDIARIO))
+    conteudosEducacionais1.add(ConteudoEducacional("Introdução a Kotlin", "conteúdo 1.1", 3, Nivel.BASICO))
+    conteudosEducacionais1.add(ConteudoEducacional("A interface List", "conteúdo 1.2", 2, Nivel.INTERMEDIARIO))
+    conteudosEducacionais1.add(ConteudoEducacional("Falando sobre ArrayList", "conteúdo 1.3", 2, Nivel.INTERMEDIARIO))
 
     val aluno1 = Aluno(1, "Enzo")
     val aluno2 = Aluno(2, "Júlio")
@@ -31,20 +36,17 @@ fun main() {
 
     // Vamos criar agora uma outra formação educacional, com seus conteúdos
     // e inscrever o aluno4
-    val conteudosEducacionais2 = ArrayList<ConteudoEducacional>()
-    conteudosEducacionais2.add(ConteudoEducacional("A importância do 'mis en place", 2, Nivel.BASICO))
-    conteudosEducacionais2.add(ConteudoEducacional("Carnes vermelhas", 8, Nivel.INTERMEDIARIO))
-    conteudosEducacionais2.add(ConteudoEducacional("Carnes brancas", 6, Nivel.INTERMEDIARIO))
-    conteudosEducacionais2.add(ConteudoEducacional("Refeições vegetarianas", 6, Nivel.AVANCADO))    
+    val conteudosEducacional2 = ArrayList<ConteudoEducacional>()
+    conteudosEducacional2.add(ConteudoEducacional("A importância do 'mis en place", "conteúdo 2.1", 2, Nivel.BASICO))
+    conteudosEducacional2.add(ConteudoEducacional("Carnes vermelhas", "conteúdo 2.2", 8, Nivel.INTERMEDIARIO))
+    conteudosEducacional2.add(ConteudoEducacional("Carnes brancas", "conteúdo 2.3", 6, Nivel.INTERMEDIARIO))
+    conteudosEducacional2.add(ConteudoEducacional("Refeições vegetarianas", "conteúdo 2.4", 6, Nivel.AVANCADO))    
 
     val aluno4 = Aluno(4, "André")    
     
     // Agora vamos inscrever o aluno4 na útima formação que criei
-    val formacao = Formacao("Técnicas de gastronomia", conteudosEducacionais2)
+    val formacao = Formacao("Técnicas de gastronomia", conteudosEducacional2)
     formacao.matricular(aluno4)
 
-    
-
-
-
+    print(conteudosEducacionais1)
 }

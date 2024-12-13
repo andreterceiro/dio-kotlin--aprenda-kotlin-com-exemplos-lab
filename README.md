@@ -19,41 +19,31 @@ title: Classes do sistema
 ---
 classDiagram
     class ConteudoEducacional {
-        - Integer codigo
         - String nome
         - String conteudo
-        + Integer getCodigo()
-        + Double getNome()
-        + String getFormacoes()
-        + String getConteudo()
-        + void setCodigo(Integer code)
-        + void setNome(String nome)
-        + void setConteudo(String conteudo)
+        - Int duracaoHoras
+        - Nivel nivel
+        + String nome()
+        + String conteudo()
+        + Int duracaoHoras()
+        + Nivel nivel()
+        + constructor(String nome, String conteudo, Int duracaoHoras, Nivel nivel)
     }
 
     class Formacao {
-        - Integer codigo
         - String nome
-        - Nivel nivel
-        + Integer getCodigo()
-        + Double getNome()
-        + Nivel getNivel()
-        + ConteudoEducacional getConteudoEducacional()
-        + void setCodigo(Integer code)
-        + void setNome(String nome)
-        + void setNivel(Nivel nivel)
-        + void setConteudoEducacional(ConteudoEducacional conteudoEducacional)
+        - List<ConteudoEducacional> conteudosEducacionais
+        - List<Aluno> inscritos
+        + String nome()
+        + List<ConteudoEducacional> conteudoEducacionais()
+        + void matricular(Aluno aluno)        
     }
 
     class Aluno {
         - Integer codigo
         - String nome
-        - List<Formacao> formacoes
-        + Integer getCodigo()
-        + Double getNome()
-        + void setCodigo(Integer code)
-        + void setNome(String nome)
-        + void matricular(Formacao formacao)
+        + Integer codigo()
+        + Double nome()
     }
  
     class Nivel{

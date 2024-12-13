@@ -44,7 +44,7 @@ classDiagram
 
     class Aluno {
         - Integer codigo
-        - String name
+        - String nome
         - List<Formacao> formacoes
         + Integer getCodigo()
         + Double getNome()

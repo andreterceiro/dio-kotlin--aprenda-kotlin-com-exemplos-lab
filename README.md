@@ -64,3 +64,5 @@ classDiagram
     Formacao "N" -- "N" Aluno
     Formacao "1" -- "1" Nivel
 ```
+
+**OBS:** eu **ão** me preocuparei com algumas propriedades que na prática seriam importantes em um sistema real. Por exemplo um aluno (renomeei "usuario" para "aluno") não terá endereço, CEP, CPF etc. Eu me preocuparei com a relação entre os objetos, ok?
